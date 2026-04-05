@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0010;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0005;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff0055;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6a00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0055;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="url(#bg)" rx="10"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="900" height="3" fill="url(#accent)" rx="2"/>
+
+  <!-- Hex grid decoration (right side) -->
+  <g opacity="0.08" stroke="#ff0055" stroke-width="0.8" fill="none">
+    <polygon points="780,40 800,28 820,40 820,64 800,76 780,64"/>
+    <polygon points="820,40 840,28 860,40 860,64 840,76 820,64"/>
+    <polygon points="800,76 820,64 840,76 840,100 820,112 800,100"/>
+    <polygon points="760,76 780,64 800,76 800,100 780,112 760,100"/>
+    <polygon points="780,112 800,100 820,112 820,136 800,148 780,136"/>
+    <polygon points="820,112 840,100 860,112 860,136 840,148 820,136"/>
+    <polygon points="800,148 820,136 840,148 840,172 820,184 800,172"/>
+  </g>
+
+  <!-- Circuit trace decoration -->
+  <g opacity="0.15" stroke="#ff6a00" stroke-width="1" fill="none">
+    <polyline points="40,170 40,190"/>
+    <circle cx="40" cy="168" r="3" fill="#ff6a00" opacity="0.4"/>
+    <polyline points="60,170 60,190"/>
+    <circle cx="60" cy="168" r="3" fill="#ff6a00" opacity="0.4"/>
+    <line x1="40" y1="180" x2="60" y2="180"/>
+  </g>
+
+  <!-- Binary / hex stream -->
+  <g opacity="0.09" font-family="monospace" font-size="10" fill="#ff0055">
+    <text x="630" y="30">0xDEADBEEF</text>
+    <text x="640" y="48">0xCAFEBABE</text>
+    <text x="625" y="66">0xFF4A2C11</text>
+    <text x="635" y="84">0x7F3B9E00</text>
+  </g>
+
+  <!-- Glowing orb / core -->
+  <circle cx="90" cy="100" r="52" fill="#ff0055" opacity="0.04" filter="url(#glow2)"/>
+  <circle cx="90" cy="100" r="36" fill="none" stroke="url(#accent2)" stroke-width="1.5" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="90" cy="100" r="22" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.7" filter="url(#glow)"/>
+  <!-- Inner symbol: neo cross -->
+  <g filter="url(#glow)" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round">
+    <line x1="90" y1="86" x2="90" y2="114"/>
+    <line x1="76" y1="100" x2="104" y2="100"/>
+    <line x1="80" y1="90" x2="100" y2="110"/>
+    <line x1="100" y1="90" x2="80" y2="110"/>
+  </g>
+  <circle cx="90" cy="100" r="5" fill="url(#accent)" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Title -->
+  <text x="160" y="92" font-family="'Segoe UI', Arial, sans-serif" font-size="50"
+        font-weight="700" fill="url(#accent)" filter="url(#glow)" letter-spacing="3">
+    neocrypter
+  </text>
+
+  <!-- Subtitle -->
+  <text x="162" y="125" font-family="'Segoe UI', Arial, sans-serif" font-size="15"
+        fill="#b06070" letter-spacing="0.5">
+    Next-Generation File Crypter &amp; Packer Toolkit
+  </text>
+
+  <!-- Tags -->
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+    <rect x="162" y="145" width="76" height="22" rx="4" fill="#ff0055" opacity="0.15" stroke="#ff0055" stroke-width="0.8"/>
+    <text x="174" y="160" fill="#ff8099">Crypter</text>
+
+    <rect x="248" y="145" width="60" height="22" rx="4" fill="#ff0055" opacity="0.15" stroke="#ff0055" stroke-width="0.8"/>
+    <text x="260" y="160" fill="#ff8099">Packer</text>
+
+    <rect x="318" y="145" width="72" height="22" rx="4" fill="#ff6a00" opacity="0.15" stroke="#ff6a00" stroke-width="0.8"/>
+    <text x="330" y="160" fill="#ffb366">Evasion</text>
+
+    <rect x="400" y="145" width="100" height="22" rx="4" fill="#b000ff" opacity="0.12" stroke="#b000ff" stroke-width="0.8"/>
+    <text x="412" y="160" fill="#d580ff">Obfuscation</text>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="197" width="900" height="3" fill="url(#accent)" rx="2"/>
+</svg>
